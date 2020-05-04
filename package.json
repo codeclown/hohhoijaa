@@ -1,0 +1,15 @@
+{
+  "name": "hohhoijaa",
+  "version": "1.0.0",
+  "main": "src/hohhoijaa.js",
+  "license": "MIT",
+  "bin": {
+    "hohhoijaa": "src/cli.js"
+  },
+  "devDependencies": {
+    "mocha": "^7.1.2"
+  },
+  "scripts": {
+    "test": "mocha src/*.test.js"
+  }
+}
