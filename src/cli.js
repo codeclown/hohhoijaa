@@ -26,6 +26,10 @@ if (require.main === module) {
     process.exit(1);
   }
 
+  if (args.flags.includes('--check')) {
+    console.error('Running in CI mode (--check)...');
+  }
+
   let exitCode = 0;
 
   Promise

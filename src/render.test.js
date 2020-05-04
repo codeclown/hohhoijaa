@@ -19,16 +19,16 @@ describe('render', () => {
       { level: 2, text: 'Sub-heading' },
       { level: 3, text: 'Sub-sub-heading' }
     ]), `
-- Heading levels
-  - Heading
-    - Sub-heading
-      - Sub-sub-heading
-  - Heading
-- Major heading
-  - Sub-sub-heading
-  - \`code\`
-  - Sub-heading
-    - Sub-sub-heading
+- [Heading levels](#heading-levels)
+  - [Heading](#heading)
+    - [Sub-heading](#sub-heading)
+      - [Sub-sub-heading](#sub-sub-heading)
+  - [Heading](#heading)
+- [Major heading](#major-heading)
+  - [Sub-sub-heading](#sub-sub-heading)
+  - [\`code\`](#code)
+  - [Sub-heading](#sub-heading)
+    - [Sub-sub-heading](#sub-sub-heading)
     `.trim());
   });
 });
