@@ -6,15 +6,14 @@
 
 <!-- hohhoijaa -->
 
-- [hohhoijaa](#hohhoijaa)
-  - [Table of Contents](#table-of-contents)
-  - [Why](#why)
-  - [Installation](#installation)
-  - [Usage](#usage)
-    - [Add template tag](#add-template-tag)
-    - [CLI](#cli)
-  - [Tests](#tests)
-  - [License](#license)
+- [Table of Contents](#table-of-contents)
+- [Why](#why)
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Add template tag](#add-template-tag)
+  - [CLI](#cli)
+- [Tests](#tests)
+- [License](#license)
 
 <!-- /hohhoijaa -->
 
@@ -60,6 +59,12 @@ Validate existing TOCs (if any file needs updating, will exit with 1; otherwise 
 
 ```bash
 hohhoijaa --check *.md
+```
+
+By default the first H1-level heading is omitted. Can choose to keep it:
+
+```bash
+hohhoijaa --keep-h1 *.md
 ```
 
 ## Tests

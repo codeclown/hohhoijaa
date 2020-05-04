@@ -43,7 +43,12 @@ if (require.main === module) {
           }
           const templateSpot = templateSpots[0];
           const previous = contents.slice(templateSpot.start, templateSpot.end);
-          const headings = parse(contents);
+          let headings = parse(contents);
+          // TODO move into separate file/function
+          if (!args.flags.includes('--keep-h1') && headings[0].level === 1) {
+            headings.shift();
+            headings = headings.map(heading => Object.assign({}, heading, { level: heading.level - 1 }));
+          }
           const tableOfContents = render(headings);
           const insert = `\n\n${tableOfContents}\n\n`;
           if (insert === previous) {
