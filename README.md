@@ -24,7 +24,7 @@ Yes, there [are](https://www.npmjs.com/package/gen-md-toc) [tons](https://www.np
 
 This script is for those of us who want the following:
 
-- Support multiple files out-of-the-box, i.e. `gen-toc-md *.md`
+- Support multiple files out-of-the-box, i.e. `hohhoijaa *.md`
 - For CI use, `--check` to validate existing TOCs but not write anything
 - No external dependencies, just simple text matching (see [`src/*.test.js`](src/), it works just fine)
 
