@@ -70,23 +70,22 @@ if (require.main === module) {
               console.error(`File ${JSON.stringify(file)} changed`);
             });
         })
-        .then(() => {
-          process.exit(exitCode);
-        })
         .catch(error => {
           if (error.code === 'ENOENT') {
             if (args.flags.includes('--check')) {
               console.error(`FAIL File ${JSON.stringify(file)} not found`);
               exitCode = 1;
-            } else {
-              console.error(`File ${JSON.stringify(file)} not found, skipping`);
+              return;
             }
+            console.error(`File ${JSON.stringify(file)} not found, skipping`);
             return;
           }
           console.error(`File ${JSON.stringify(file)} failed with error: ${error.stack}`);
-          throw error;
         })
     }))
+    .then(() => {
+      process.exit(exitCode);
+    })
     .catch(error => {
       console.error(`Process failed with error: ${error.stack}`);
       process.exit(1);
