@@ -2,6 +2,7 @@
 
 const fs = require('fs');
 const util = require('util');
+const path = require('path');
 const findTemplateSpot = require('./findTemplateSpot');
 const parse = require('./parse');
 const render = require('./render');
@@ -9,11 +10,12 @@ const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
 
 if (require.main === module) {
+  const workingDirectory = process.cwd();
   const args = process.argv.slice(2).reduce((args, item) => {
     if (item.startsWith('--')) {
       args.flags.push(item);
     } else {
-      args.files.push(item);
+      args.files.push(path.join(workingDirectory, item));
     }
     return args;
   }, { flags: [], files: [] });
