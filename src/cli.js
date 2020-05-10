@@ -83,11 +83,12 @@ if (require.main === module) {
             }
             return;
           }
+          console.error(`File ${JSON.stringify(file)} failed with error: ${error.stack}`);
           throw error;
         })
     }))
     .catch(error => {
-      console.error(`Process failed with error: ${error.message}`);
+      console.error(`Process failed with error: ${error.stack}`);
       process.exit(1);
     });
 }
