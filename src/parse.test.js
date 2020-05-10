@@ -18,6 +18,20 @@ some code
     `), []);
   });
 
+  it('does not parse inside code blocks', () => {
+    assert.deepStrictEqual(parse(`
+foobar
+
+\`\`\`bash
+npm install --save helppo
+# or
+yarn add helppo
+\`\`\`
+
+foobar
+    `), []);
+  });
+
   it('parses headings', () => {
     assert.deepStrictEqual(parse(`
 # Heading levels
